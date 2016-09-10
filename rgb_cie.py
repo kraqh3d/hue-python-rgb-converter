@@ -215,6 +215,12 @@ class Converter:
 
         return xy
 
+    def CIE1931ToRGB(self, x, y, bri=1):
+        """Converts CIE 1931 x and y coordinates and brightness value from 0 to 1 to a RGB."""
+        r, g, b = self.color.getRGBFromXYAndBrightness(x, y, bri)
+        RGB = [r, g, b]
+        return RGB
+
     def CIE1931ToHex(self, x, y, bri=1):
         """Converts CIE 1931 x and y coordinates and brightness value from 0 to 1 to a CSS hex color."""
         r, g, b = self.color.getRGBFromXYAndBrightness(x, y, bri)
